@@ -1,9 +1,22 @@
 [project]
 name = "gmewebapi"
 version = "0.1.0"
+authors = [
+  { name="Samuel Brizzi", email="samuel.brizzi94@gmail.com" },
+]
 description = "Simple interface for GME Web API"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "requests>=2.32.5",
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/moddroid94/gmewebapi"
+Issues = "https://github.com/moddroid94/gmewebapi/issues"
