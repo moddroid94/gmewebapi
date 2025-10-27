@@ -1,4 +1,4 @@
-#GME Web API
+# GME Web API
 ## Simple Interface to use the GME Web Api programmatically
 
 As the GME does not provide a public API to access data, I've made this library to allow the use of the web facing API used by the site to retrieve the values for various energy prices.
