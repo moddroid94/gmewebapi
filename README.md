@@ -5,7 +5,7 @@ A clean and lightweight Python wrapper for interacting with the GME Web API.
 [![PyPI version](https://img.shields.io/pypi/v/gmewebapi.svg)](https://pypi.org/project/gmewebapi/)
 [![Build Status](https://github.com/moddroid94/gmewebapi/actions/workflows/python-publish.yml/badge.svg)](https://github.com/moddroid94/gmewebapi/actions)
 [![GitHub stars](https://img.shields.io/github/stars/moddroid94/gmewebapi.svg)](https://github.com/moddroid94/gmewebapi/stargazers)
-[![License](https://img.shields.io/github/license/moddroid94/gmewebapi.svg)](https://github.com/moddroid94/gmewebapi/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/moddroid94/gmewebapi.svg)](https://github.com/moddroid94/gmewebapi/blob/master/LICENSE)
 
 ---
 
@@ -61,4 +61,4 @@ free to open an issue or submit a pull request:
 
 License
 
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the AGPL3 License. See LICENSE.MD for more information.
