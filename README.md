@@ -5,21 +5,24 @@ As the GME does not provide a public API to access data, I've made this library 
 
 It may be subject to changes and the mechanism used for auth by the site could change anytime.
 
-But, this will eventually be able to actually use the official API with the authentication provided by the GME, hopefully they release a bit the required legal tasks needed to get it.
 
 For now this has the package "requests" as the only dependency, this could be removed by using the built-in urllib3 module, but it's much more cumbersome to use, so that's it, if you don't like it, contributions are welcome!
 
 Usage is pretty basic.\
 import the package, initialize the api, get prices
 
-Classes and functions all have docstrings, read them, official docs will come later on.
+everything apart the dates are type checked and enumerated trough classes so just check the source to get the options for the parameters, default to today pun with 15m prices.
 
+it should be a package on pypi but i had no time for that yet, so you'll need to use this as a repo dependency if you want to use it programmatically.
 ---
 ```
 import gmewebapi
+#or
+#from src import gmewebapi 
+#if using locally from venv
 
 
 gme = gmewebapi.GME()
 gme.initialize()
-gme.getPrice(Inizio, Fine, Granularita, Mercato, Zona, Tipologia)
+gme.getPrice(20260620, 20260621, Granularita, Mercato, Zona, Tipologia)
 ```
