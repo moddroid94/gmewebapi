@@ -18,7 +18,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Install uv
-        uses: astral-sh/setup-uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          # The version of uv to install (default: searches for version in config files, then latest)
+          version: ""
       - name: Install Python 3.13
         run: uv python install 3.13
       - name: Build
