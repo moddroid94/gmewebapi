@@ -1,28 +1,64 @@
-# GME Web API
-## Simple Interface to use the GME Web Api programmatically
+# gmewebapi
 
-As the GME does not provide a public API to access data, I've made this library to allow the use of the web facing API used by the site to retrieve the values for various energy prices.
+A clean and lightweight Python wrapper for interacting with the GME Web API.
 
-It may be subject to changes and the mechanism used for auth by the site could change anytime.
+[![PyPI version](https://img.shields.io/pypi/v/gmewebapi.svg)](https://pypi.org/project/gmewebapi/)
+[![Build Status](https://github.com/moddroid94/gmewebapi/actions/workflows/python-publish.yml/badge.svg)](https://github.com/moddroid94/gmewebapi/actions)
+[![GitHub stars](https://img.shields.io/github/stars/moddroid94/gmewebapi.svg)](https://github.com/moddroid94/gmewebapi/stargazers)
+[![License](https://img.shields.io/github/license/moddroid94/gmewebapi.svg)](https://github.com/moddroid94/gmewebapi/blob/main/LICENSE)
 
-
-For now this has the package "requests" as the only dependency, this could be removed by using the built-in urllib3 module, but it's much more cumbersome to use, so that's it, if you don't like it, contributions are welcome!
-
-Usage is pretty basic.\
-import the package, initialize the api, get prices
-
-everything apart the dates are type checked and enumerated trough classes so just check the source to get the options for the parameters, default to today pun with 15m prices.
-
-it should be a package on pypi but i had no time for that yet, so you'll need to use this as a repo dependency if you want to use it programmatically.
 ---
+
+## Features
+
+- **Asynchronous Support**: Built to work seamlessly with async Python applications.
+- **Simple Interface**: Minimizes boilerplate to make API requests straightforward.
+- **Lightweight**: Minimal dependencies to keep your environment clean.
+- **Type-Safe**: Provides basic typing support for improved developer experience.
+
+## Installation
+
+Install the package via `pip`:
+
+```bash
+pip install gmewebapi
 ```
+Or using uv / poetry:
+```
+uv add gmewebapi
+```
+## Quick Start
+
+Below is a simple example showing how to initialize the client and fetch data:
+```
+import asyncio
 import gmewebapi
-#or
-#from src import gmewebapi 
-#if using locally from venv
 
+async def main():
+    # Initialize the client (configure with your credentials as needed)
+    async with gmewebapi.GME() as gme:
+        #get token, return true if ok
+        if gme.initialize():
 
-gme = gmewebapi.GME()
-gme.initialize()
-gme.getPrice(20260620, 20260621, Granularita, Mercato, Zona, Tipologia)
+        #get prices data
+        prices = gme.getPrice(20260620, 20260621, Granularita, Mercato, Zona, Tipologia)
+        print(prices)
+
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
+
+## Contributing
+
+Contributions are welcome. If you find a bug or have a feature request, feel
+free to open an issue or submit a pull request:
+
+1.  Fork the repository.
+2.  Create a feature branch (git checkout -b feature/amazing-feature).
+3.  Commit your changes (git commit -m 'Add some amazing feature').
+4.  Push to the branch (git push origin feature/amazing-feature).
+5.  Open a Pull Request.
+
+License
+
+Distributed under the MIT License. See LICENSE for more information.
